@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  hmcr-db:
+      build: .
+      image: hmcr-db:ready
+      container_name: hmcr-db
+      ports:
+        - "1466:1433"
+      environment:
+        MSSQL_SA_PASSWORD: Forever21!
+        ACCEPT_EULA: Y
+      volumes:
+        - ..:/usr/local/src
